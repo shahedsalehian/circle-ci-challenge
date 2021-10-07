@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest --outputFile=test_report.json"
+    "test": "jest --json --outputFile=test_report.json"
   },
   "author": "",
   "license": "ISC",
