@@ -24,9 +24,9 @@ jobs:
               TESTFILES=$(circleci tests glob "*.test.js" | circleci tests split --split-by=timings)
               CI=true npm run test $TESTFILES
       - store_test_results:
-          path: test_result.json
+          path: test_report.json
       - store_artifacts:
-          path: test_result.json
+          path: test_report.json
 
 workflows:
   test:
