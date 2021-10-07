@@ -22,8 +22,6 @@ jobs:
       - run: |
               TESTFILES=$(circleci tests glob "*.test.js" | circleci tests split)
               CI=true npm run test $TESTFILES
-      - store_test_results:
-          path: test_report.json
       - store_artifacts:
           path: test_report.json
 
