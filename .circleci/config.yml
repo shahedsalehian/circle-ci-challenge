@@ -25,7 +25,7 @@ jobs:
               CI=true npm run test $TESTFILES
       - store_test_results:
           path: test_result.json
-      - store_articacts:
+      - store_artifacts:
           path: test_result.json
 
 workflows:
