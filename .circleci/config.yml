@@ -4,13 +4,19 @@ jobs:
   build:
     docker:
       - image: circleci/node:16.10.0
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run: npm install
   test:
     docker:
       - image: circle/node:16.10.0
-    parallelism: 1
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    parallelism: 2
     steps:
       - checkout
       - run: npm test
