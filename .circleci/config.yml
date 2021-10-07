@@ -12,6 +12,7 @@ jobs:
       - image: circle/node:16.10.0
     parallelism: 2
     steps:
+      - checkout
       - run: npm test
       - run:
           command: |
