@@ -20,9 +20,9 @@ jobs:
           paths:
             - node_modules
       - run: npm test
-      - run:
-          command: |
-            echo $(circleci tests glob "*.test.js" | circleci tests split --split-by=timings)
+      - run: |
+              TESTFILES=$(circleci tests glob "test/**/*.test.js" | circleci tests split --split-by=timings)
+              CI=true npm run test $TESTFILES
 
 workflows:
   test:
