@@ -21,7 +21,7 @@ jobs:
             - node_modules
       - run: npm test
       - run: |
-              TESTFILES=$(circleci tests glob "test/**/*.test.js" | circleci tests split --split-by=timings)
+              TESTFILES=$(circleci tests glob "*.test.js" | circleci tests split --split-by=timings)
               CI=true npm run test $TESTFILES
       - store_test_results:
           path: test_result.json
