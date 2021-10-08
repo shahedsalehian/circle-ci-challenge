@@ -26,7 +26,7 @@ jobs:
           path: test_report.json
       - when:
           condition:
-            - equal: [ calculation, << pipeline.git.tag >> ]
+            equal: [ "calculation", << pipeline.git.tag >> ]
           steps:
             - run: npm run start
 
