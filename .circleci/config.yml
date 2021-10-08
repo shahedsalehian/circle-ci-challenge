@@ -36,7 +36,7 @@ jobs:
 workflows:
   test:
     jobs:
-      - test
+      - test:
           calculation: false
-      - test
+      - test:
           calculation: true
