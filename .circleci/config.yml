@@ -2,6 +2,10 @@ version: 2.1
 
 jobs:
   test:
+    parameters:
+      calculation:
+        type: boolean
+        default: false
     docker:
       - image: circleci/node:16.10.0
         auth:
@@ -25,8 +29,7 @@ jobs:
       - store_artifacts:
           path: test_report.json
       - when:
-          condition:
-            equal: [ "calculation", << pipeline.git.tag >> ]
+          condition: << parameters.calculation >>
           steps:
             - run: npm run start
 
@@ -34,3 +37,6 @@ workflows:
   test:
     jobs:
       - test
+          calculation: false
+      - test
+          calculation: true
