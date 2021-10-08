@@ -24,6 +24,11 @@ jobs:
               CI=true npm run test $TESTFILES
       - store_artifacts:
           path: test_report.json
+      - when:
+          condition:
+            - equal: [ calculation, << pipeline.git.tag >> ]
+          steps:
+            - run: npm run start
 
 workflows:
   test:
