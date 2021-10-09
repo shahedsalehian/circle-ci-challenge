@@ -41,5 +41,5 @@ workflows:
           name: test-calc-false
       - test:
           calculation: true
-          requires: [test-ci]
+          requires: [test-calc-false]
           name: testing-calc-true
