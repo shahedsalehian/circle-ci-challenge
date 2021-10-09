@@ -38,7 +38,8 @@ workflows:
     jobs:
       - test:
           calculation: false
-          name: test-ci
+          name: test-calc-false
       - test:
           calculation: true
           requires: [test-ci]
+          name: testing-calc-true
